@@ -7,6 +7,7 @@ class Solution:
             for j in range(i, len(s)):
                 if s[j] not in substring:
                     substring += s[j]
+                    print(substring)
                     leng += 1
                     if (leng > maxlen):
                         maxlen = leng
