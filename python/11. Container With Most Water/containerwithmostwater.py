@@ -4,13 +4,19 @@ class Solution:
     def maxArea(self, heights: List[int]) -> int:
         n = len(heights)
         max_area = 0
-        for i in range(n):
-            for j in range(i+1, n):
-                base = j - i
-                height = min(heights[i], heights[j])
-                area = base * height
-                if area > max_area:
-                    max_area = area
+        left = 0
+        right = n - 1 
+        for _ in range(n):
+            base = right - left
+            height = min(heights[left], heights[right])
+            area = base * height
+            if area > max_area:
+                max_area = area
+            if heights[right] < heights[left]:
+                right -= 1
+            else:
+                left += 1
+
         return max_area
     
 if __name__ == "__main__":
