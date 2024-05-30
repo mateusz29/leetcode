@@ -11,4 +11,4 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.myPow(2, 6))
+    print(solution.myPow(2, 0.5))
