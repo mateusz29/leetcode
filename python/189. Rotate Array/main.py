@@ -14,12 +14,10 @@ class Solution:
 
         n = len(nums)
         k %= n
-
-        print(nums)
+        
         reverse(0, n-1)
         reverse(0, k-1)
         reverse(k, n-1)
-        print(nums)
 
 
 if __name__ == "__main__":   
