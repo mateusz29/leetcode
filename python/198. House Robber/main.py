@@ -2,10 +2,10 @@ from typing import List
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        prev1, prev2 = 0, 0
+        max1 = max2 = 0
         for num in nums:
-            prev1, prev2 = max(prev2 + num, prev1), prev1
-        return prev1
+            max1, max2 = max(max1, max2 + num), max1
+        return max1
 
 if __name__ == "__main__":
     solution = Solution()
