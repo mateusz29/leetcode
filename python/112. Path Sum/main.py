@@ -8,22 +8,17 @@ class TreeNode:
         self.right = right
 
 class Solution:
-    def minDepth(self, root: Optional[TreeNode]) -> int:
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
         if root is None:
-            return 0
+            return False
         
         if root.left is None and root.right is None:
-            return 1
+            return root.val == targetSum
         
-        left = self.minDepth(root.left)
-        right = self.minDepth(root.right)
+        leftSum = self.hasPathSum(root.left, targetSum - root.val)
+        rightSum = self.hasPathSum(root.right, targetSum - root.val)
 
-        if root.left is None:
-            return right + 1
-        if root.right is None:
-            return left + 1
-
-        return min(left, right) + 1     
+        return leftSum or rightSum
 
 if __name__ == "__main__":
     solution = Solution()
