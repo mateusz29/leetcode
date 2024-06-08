@@ -19,6 +19,3 @@ class Solution:
         rightSum = self.hasPathSum(root.right, targetSum - root.val)
 
         return leftSum or rightSum
-
-if __name__ == "__main__":
-    solution = Solution()

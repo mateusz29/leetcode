@@ -24,6 +24,3 @@ class Solution:
             return left + 1
 
         return min(left, right) + 1     
-
-if __name__ == "__main__":
-    solution = Solution()
