@@ -1,9 +1,10 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        Map<Integer, Integer> hashMap = new HashMap<>();
         for (int i=0; i<nums.length; i++){
             hashMap.put(nums[i], i);
         }
