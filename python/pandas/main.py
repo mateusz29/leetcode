@@ -13,6 +13,10 @@ def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
 def selectData(students: pd.DataFrame) -> pd.DataFrame:
     return students.loc[students['student_id'] == 101, ['name', 'age']]
 
+def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['bonus'] = employees['salary'] * 2
+    return employees
+
 df = createDataframe([[1,15],[2,11],[3,11],[4,20]])
 print(df)
 
