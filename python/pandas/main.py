@@ -10,6 +10,9 @@ def getDataframeSize(players: pd.DataFrame) -> List[int]:
 def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
     return employees.head(3)
 
+def selectData(students: pd.DataFrame) -> pd.DataFrame:
+    return students.loc[students['student_id'] == 101, ['name', 'age']]
+
 df = createDataframe([[1,15],[2,11],[3,11],[4,20]])
 print(df)
 
@@ -18,3 +21,6 @@ print(size)
 
 three_rows = selectFirstRows(df)
 print(three_rows)
+
+selected_data = selectData(df)
+print(selected_data)
