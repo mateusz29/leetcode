@@ -7,8 +7,14 @@ def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
 def getDataframeSize(players: pd.DataFrame) -> List[int]:
     return [players.shape[0], players.shape[1]]
 
+def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
+    return employees.head(3)
+
 df = createDataframe([[1,15],[2,11],[3,11],[4,20]])
 print(df)
 
 size = getDataframeSize(df)
 print(size)
+
+three_rows = selectFirstRows(df)
+print(three_rows)
