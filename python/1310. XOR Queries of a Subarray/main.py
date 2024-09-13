@@ -1,19 +1,18 @@
-from functools import lru_cache
-
-
 class Solution:
     def xorQueries(self, arr: list[int], queries: list[list[int]]) -> list[int]:
         result = []
+        n = len(arr)
+        pre = [0] * n
+        pre[0] = arr[0]
 
-        @lru_cache
-        def get_xored(left: int, right: int) -> int:
-            xored = 0
-            for num in arr[left : right + 1]:
-                xored ^= num
-            return xored
+        for i in range(1, n):
+            pre[i] = pre[i - 1] ^ arr[i]
 
-        for query in queries:
-            result.append(get_xored(query[0], query[1]))
+        for left, right in queries:
+            if left == 0:
+                result.append(pre[right])
+            else:
+                result.append(pre[right] ^ pre[left - 1])
 
         return result
 
